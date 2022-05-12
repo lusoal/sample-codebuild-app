@@ -6,8 +6,8 @@ phases:
       - echo Logging in to Amazon ECR...
       - aws --version
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
-      - IMAGE_NAME="sample-code-build-app"
-      - REPOSITORY_URI="REPLACE WITH REPO URI"
+      - IMAGE_NAME="sample-app"
+      - REPOSITORY_URI="936068047509.dkr.ecr.us-east-1.amazonaws.com/sample-app:latest"
       - IMAGE_TAG=prod_$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
   build:
     commands:
